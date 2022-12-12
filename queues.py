@@ -8,14 +8,21 @@ from collections import deque
 
 # Class variables for the implementation of enqueue and dequeue.
 class Queue:
-    def __init__(self):
-        self.elements = deque() # The leading underscore in the attribute’s name indicates an internal bit of implementation, which only the class should access and modify.
+    def __init__(self, * element):
+        self._elements = deque() # The leading underscore in the attribute’s name indicates an internal bit of implementation, which only the class should access and modify.
 
+    def __len__(self):
+        return len(self.__elements)
+    
+    def __iter__(self):
+        while len(self) > 0:
+            yield self.dequeue()
+    
     def enqueue(self, element):
-        self.elements.append(element)
+        self._elements.append(element)
 
     def dequeue(self):
-        return self.elements.popleft()
+        return self._elements.popleft()
     
 
 # function for testing FIFO queue
