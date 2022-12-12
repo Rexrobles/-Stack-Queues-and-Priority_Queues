@@ -3,14 +3,16 @@
 
 # Importing the Queues module 
 from collections import deque
+# importing queues for testing FIFO queue.
+from queues import Queue
 
 # Class variables for the implementation of enqueue and dequeue.
 class Queue:
     def __init__(self):
-        self._elements = deque() # The leading underscore in the attribute’s name indicates an internal bit of implementation, which only the class should access and modify.
+        self.elements = deque() # The leading underscore in the attribute’s name indicates an internal bit of implementation, which only the class should access and modify.
 
     def enqueue(self, element):
-        self._elements.append(element)
+        self.elements.append(element)
 
     def dequeue(self):
-        return self._elements.popleft()
+        return self.elements.popleft()
