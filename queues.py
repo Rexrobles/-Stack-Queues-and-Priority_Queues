@@ -16,3 +16,12 @@ class Queue:
 
     def dequeue(self):
         return self.elements.popleft()
+    
+
+# function for testing FIFO queue
+fifo = Queue()
+fifo.enqueue('1st')
+fifo.enqueue('2nd')
+fifo.enqueue('3rd')
+
+print(fifo.dequeue())
