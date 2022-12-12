@@ -4,7 +4,7 @@
 # Importing the Queues module 
 from collections import deque
 # importing queues for testing FIFO queue.
-from queues import Queue
+# from queues import Queue
 
 # Class variables for the implementation of enqueue and dequeue.
 class Queue:
