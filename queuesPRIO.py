@@ -13,4 +13,4 @@ heappush(fruit, "pineapple")
 heappush(fruit, "orange")
 heappush(fruit, "apple")
 
-print("\nElements being sorted as:\n\n", fruit)
+print("\nElements being sorted as:\n\n", fruit) # print function for the output of the program
