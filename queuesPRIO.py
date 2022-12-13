@@ -11,11 +11,11 @@ class PriorityQueue:
         
     # adding an element into the Priority Queue.
     def enqueue_with_priority(self, priority, value):
-        heappush(self.elements, (priority, value))
+        heappush(self.elements, (-priority, value))
 
     # Heappop for dequeueing elements from the Priority Queue.
     def dequeue(self):
-        return heappop(self.elements)
+        return heappop(self.elements)[1]
 
 #priority level: critical, important, and neutral.    
 CRITICAL = 3
@@ -28,6 +28,8 @@ messages.enqueue_with_priority(NEUTRAL, "Radio station tuned in")
 messages.enqueue_with_priority(CRITICAL, "Brake pedal depressed")
 messages.enqueue_with_priority(IMPORTANT, "Hazard lights turned on")
 
-#message dequeue with the lowest priority
-print("\nThis is the lowest prioity:  \n")
-print(messages.dequeue())
+print("\nThese are the results:\n")
+print("\t", messages.dequeue())
+print("\t", messages.dequeue())
+print("\t", messages.dequeue())
+print("\t", messages.dequeue())
