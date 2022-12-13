@@ -15,4 +15,5 @@ heappush(fruit, "pineapple")
 heappush(fruit, "orange")
 heappush(fruit, "apple")
 
-print("\nElements being sorted as:\n\n", fruit) # print function for the output of the program
+print(heappop(fruit)) # print function for the output of the program
+print("\nThese are the remaining elements:\n\t",fruit)
