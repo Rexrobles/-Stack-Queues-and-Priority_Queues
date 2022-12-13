@@ -12,7 +12,7 @@ class Queue:
         self._elements = deque() # The leading underscore in the attribute’s name indicates an internal bit of implementation, which only the class should access and modify.
 
     def __len__(self):
-        return len(self.__elements)
+        return len(self._elements)
     
     def __iter__(self):
         while len(self) > 0:
@@ -31,4 +31,8 @@ fifo.enqueue('1st')
 fifo.enqueue('2nd')
 fifo.enqueue('3rd')
 
-print(fifo.dequeue())
+print(f"\n{len(fifo)} - before to iteration (elements have not yet been dequeued)")
+for element in fifo:
+    print(element) # adding print function to print fifo queue 
+print(f"\n{len(fifo)} - after iteration (element have been dequeued)")
+
