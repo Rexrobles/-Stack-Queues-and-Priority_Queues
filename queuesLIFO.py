@@ -7,9 +7,9 @@ from collections import deque
 # from queues import Queue
 
 # Class variables for the implementation of enqueue and dequeue.
-class Queue:
+class stack:
     def __init__(self, * element):
-        self._elements = deque() # The leading underscore in the attribute’s name indicates an internal bit of implementation, which only the class should access and modify.
+        self._elements = deque(element) # The leading underscore in the attribute’s name indicates an internal bit of implementation, which only the class should access and modify.
 
     def __len__(self):
         return len(self._elements)
@@ -22,11 +22,11 @@ class Queue:
         self._elements.append(element)
 
     def dequeue(self):
-        return self._elements.popleft()
+        return self._elements.pop()
     
 
 # function for testing FIFO queue
-fifo = Queue()
+fifo = stack()
 fifo.enqueue('First')
 fifo.enqueue('Second')
 fifo.enqueue('Third')
