@@ -4,8 +4,6 @@
 # them in a certain relationship to allow for fast lookup.
 # importing heappush
 from heapq import heappush
-# importing heappop 
-from heapq import heappop
 
 fruit = [] # empty list fruit variable
 
