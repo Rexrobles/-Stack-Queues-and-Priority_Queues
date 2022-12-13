@@ -1,4 +1,4 @@
-# LIFO Queues Python File
+# FIFO Queues Python File
 # Building a Queue Data Type
 
 # Importing the Queues module 
