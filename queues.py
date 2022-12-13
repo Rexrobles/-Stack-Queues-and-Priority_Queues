@@ -27,12 +27,13 @@ class Queue:
 
 # function for testing FIFO queue
 fifo = Queue()
-fifo.enqueue('1st')
-fifo.enqueue('2nd')
-fifo.enqueue('3rd')
+fifo.enqueue('First')
+fifo.enqueue('Second')
+fifo.enqueue('Third')
 
-print(f"\n{len(fifo)} - before to iteration (elements have not yet been dequeued)")
+print(f"\n{len(fifo)} - before to iteration (elements have not yet been dequeued)\n")
+
 for element in fifo:
     print(element) # adding print function to print fifo queue 
+    
 print(f"\n{len(fifo)} - after iteration (element have been dequeued)")
-
