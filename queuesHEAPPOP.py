@@ -15,5 +15,7 @@ heappush(fruit, "pineapple")
 heappush(fruit, "orange")
 heappush(fruit, "apple")
 
+# when using heappop function, you’ll always get the first one
+# And the remaining variable might shuffle a bit.
 print(heappop(fruit)) # print function for the output of the program
 print("\nThese are the remaining elements:\n\t",fruit)
