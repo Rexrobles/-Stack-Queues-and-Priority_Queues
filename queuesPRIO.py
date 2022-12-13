@@ -29,4 +29,5 @@ messages.enqueue_with_priority(CRITICAL, "Brake pedal depressed")
 messages.enqueue_with_priority(IMPORTANT, "Hazard lights turned on")
 
 #message dequeue with the lowest priority
+print("\nThis is the lowest prioity:  \n")
 print(messages.dequeue())
