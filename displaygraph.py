@@ -8,3 +8,6 @@ print(f"\n{graph}\n")
 
 for neighbor in graph.neighbors(nodes["chester"]):
     print(neighbor.name)
+    
+for neighbor, weights in graph[nodes["chester"]].items():
+    print(weights["distance"], neighbor.name)
