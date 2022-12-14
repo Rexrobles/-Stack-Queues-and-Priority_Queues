@@ -11,9 +11,9 @@ def is_twentieth_century(year):
 
 nodes, graph = load_graph("roadmap.dot", City.from_dict)
 for node in nx.bfs_tree(graph, nodes["chester"]):
-    print("📍", node.name)
+    print("📌", node.name)
     if is_twentieth_century(node.year):
-        print("Found:", node.name, node.year)
+        print("\n✔️  Found:", node.name, node.year,"\n")
         break
 else:
-    print("Not found")
+    print("\n 🛑 Not found \n")
