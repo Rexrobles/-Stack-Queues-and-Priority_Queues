@@ -13,6 +13,26 @@ class IterableMixin:
     def __iter__(self):
         while len(self) > 0:
             yield self.dequeue()
+            
+            
+# Class Inheritance from the queuesFIFO.py file (added the mixin class)
+class Queue(IterableMixin):
+    def __init__(self, * element):
+        self._elements = deque() # The leading underscore in the attribute’s name indicates an internal bit of implementation, which only the class should access and modify.
+
+    def __len__(self):
+        return len(self._elements)
+    
+    def __iter__(self):
+        while len(self) > 0:
+            yield self.dequeue()
+    
+    def enqueue(self, element):
+        self._elements.append(element)
+
+    def dequeue(self):
+        return self._elements.popleft()
+    
 
 class PriorityQueue(IterableMixin):
     # Init function for the Priority Queues 
