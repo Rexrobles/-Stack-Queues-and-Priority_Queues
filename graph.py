@@ -1,6 +1,7 @@
 # Creating a custom data type for conveniently viewing graphs in cities and road maps.
 
 from typing import NamedTuple
+import networkx as nx
 
 # Adding data class for future use, such as the networkx need.
 class City(NamedTuple):
@@ -20,3 +21,11 @@ class City(NamedTuple):
             latitude = float(attributes["latitude"]),
             longitude = float(attributes["longitude"]),
         )
+
+# This function import the file for node object    
+def load_graph(filename, node_factory):
+    graph = nx.nx_agraph.read_dot(filename)
+    nodes = {
+        name: node_factory(attributes)
+        for name, attributes in graph.nodes(data = True)
+    }
