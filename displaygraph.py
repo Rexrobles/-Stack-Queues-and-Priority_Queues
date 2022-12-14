@@ -3,4 +3,5 @@ from graph import City, load_graph
 
 # The load_graph inherits parameters from the graph.py file.
 nodes, graph = load_graph("roadmap.dot", City.from_dict)
-print(f"\n{nodes['london']}\n")
+print(f"\n{nodes['london']}")
+print(f"\n{graph}\n")
