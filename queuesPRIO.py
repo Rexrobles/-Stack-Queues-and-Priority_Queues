@@ -14,7 +14,7 @@ class IterableMixin:
         while len(self) > 0:
             yield self.dequeue()
 
-class PriorityQueue:
+class PriorityQueue(IterableMixin):
     # Init function for the Priority Queues 
     def __init__(self):
         self._elements = []
