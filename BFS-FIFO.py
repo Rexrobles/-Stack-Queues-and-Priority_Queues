@@ -5,5 +5,6 @@
 import networkx as nx
 from graph import City, load_graph
 
+# This def function argument will returning a value that are being considered between the 20th century.
 def is_twentieth_century(year):
     return year and 1901 <= year <= 2000
