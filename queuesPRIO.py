@@ -3,19 +3,23 @@
 # Importing the required Python module for the priority queues
 from collections import deque 
 from heapq import heappop, heappush
+from itertools import count
 
 class PriorityQueue:
     # Init function for the Priority Queues 
     def __init__(self):
-        self.elements = []
+        self._elements = []
+        self._counter = count()
+        
         
     # adding an element into the Priority Queue.
     def enqueue_with_priority(self, priority, value):
-        heappush(self.elements, (-priority, value))
+        element = (-priority, next(self._counter), value)
+        heappush(self._elements, element)
 
     # Heappop for dequeueing elements from the Priority Queue.
     def dequeue(self):
-        return heappop(self.elements)[1]
+        return heappop(self._elements)[-1]
 
 #priority level: critical, important, and neutral.    
 CRITICAL = 3
