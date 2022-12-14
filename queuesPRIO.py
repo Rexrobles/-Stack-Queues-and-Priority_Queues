@@ -5,6 +5,15 @@ from collections import deque
 from heapq import heappop, heappush
 from itertools import count
 
+# added mixin class
+class IterableMixin:
+    def __len__(self):
+        return len(self._elements)
+
+    def __iter__(self):
+        while len(self) > 0:
+            yield self.dequeue()
+
 class PriorityQueue:
     # Init function for the Priority Queues 
     def __init__(self):
