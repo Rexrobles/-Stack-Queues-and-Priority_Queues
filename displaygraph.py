@@ -5,9 +5,6 @@ from graph import City, load_graph
 nodes, graph = load_graph("roadmap.dot", City.from_dict)
 print(f"\n{nodes['chester']}")
 print(f"\n{graph}\n")
-
-for neighbor in graph.neighbors(nodes["chester"]):
-    print(neighbor.name)
     
 for neighbor, weights in graph[nodes["chester"]].items():
     print(weights["distance"], neighbor.name)
