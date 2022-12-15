@@ -6,6 +6,17 @@ nodes, graph = load_graph("roadmap.dot", City.from_dict)
 print(f"\n{nodes['chester']}")
 print(f"\n{graph}\n")
     
+
+# The method neighbors() identifies the neighboring cities
+for neighbor in graph.neighbors(nodes["chester"]):
+    print(neighbor.name)
+print("")
+
+# in this program output, the map display a digits that represent the distance
+for neighbor, weights in graph[nodes["chester"]].items():
+    print(weights["distance"], neighbor.name)
+print("")
+
 # Defined a function that returns a list of neighbors and their weights
 
 def sort_by(neighbors, strategy):
