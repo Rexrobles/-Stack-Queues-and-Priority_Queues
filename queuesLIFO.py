@@ -26,14 +26,14 @@ class stack:
     
 
 # function for testing FIFO queue
-lifo = stack()
-lifo.enqueue('First')
-lifo.enqueue('Second')
-lifo.enqueue('Third')
+#lifo = stack()
+#lifo.enqueue('First')
+#lifo.enqueue('Second')
+#lifo.enqueue('Third')
 
-print(f"\n{len(lifo)} - before to iteration (elements have not yet been dequeued)\n")
+#print(f"\n{len(lifo)} - before to iteration (elements have not yet been dequeued)\n")
 
-for element in lifo:
-    print(element) # adding print function to print fifo queue 
+#for element in lifo:
+#    print(element) # adding print function to print fifo queue 
     
-print(f"\n{len(lifo)} - after iteration (element have been dequeued)")
+#print(f"\n{len(lifo)} - after iteration (element have been dequeued)")
