@@ -3,6 +3,7 @@ import networkx as nx
 from graph import City, load_graph
 # From graph.py import file path
 from graph import shortest_path
+from graph import connected
 
 nodes, graph = load_graph("roadmap.dot", City.from_dict)
 
@@ -20,3 +21,7 @@ def by_latitude(city):
 print(" → ".join(
     city.name
     for city in shortest_path(graph, city1, city2, by_latitude)), "\n")
+
+print(connected(graph, nodes["belfast"], nodes["glasgow"]), "\n")
+
+print(connected(graph, nodes["belfast"], nodes["derry"]))
