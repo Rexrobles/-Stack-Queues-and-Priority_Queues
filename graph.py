@@ -81,3 +81,16 @@ def breadth_first_traverse(graph, source):
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.enqueue(neighbor)
+                
+def retrace(previous, source, destination):
+    path = deque()
+
+    current = destination
+    while current != source:
+        path.appendleft(current)
+        current = previous.get(current)
+        if current is None:
+            return None
+
+    path.appendleft(source)
+    return list(path)
