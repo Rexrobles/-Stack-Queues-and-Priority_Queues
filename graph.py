@@ -3,6 +3,8 @@
 from typing import NamedTuple
 import networkx as nx
 from queuesFIFO import Queue
+from collections import deque
+
 
 # Adding data class for future use, such as the networkx need.
 class City(NamedTuple):
@@ -47,6 +49,23 @@ def breadth_first_traverse(graph, source, order_by=None):
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.enqueue(neighbor)
+
+def shortest_path(graph, source, destination, order_by = None):
+    queue = Queue(source)
+    visited = {source}
+    previous = {}
+    while queue:
+        node = queue.dequeue()
+        neighbors = list(graph.neighbors(node))
+        if order_by:
+            neighbors.sort(key=order_by)
+        for neighbor in neighbors:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.enqueue(neighbor)
+                previous[neighbor] = node
+                if neighbor == destination:
+                    return retrace(previous, source, destination)
 
 def breadth_first_search(graph, source, predicate, order_by=None):
     for node in breadth_first_traverse(graph, source, order_by):
