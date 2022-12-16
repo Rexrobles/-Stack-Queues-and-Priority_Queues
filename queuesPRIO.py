@@ -64,11 +64,11 @@ messages.enqueue_with_priority(NEUTRAL, "Radio station tuned in")
 messages.enqueue_with_priority(CRITICAL, "Brake pedal depressed")
 messages.enqueue_with_priority(IMPORTANT, "Hazard lights turned on")
 
-print("\nThese are the results:\n")
-print(f"\t 1 -", messages.dequeue())
-print(f"\t 2 -", messages.dequeue())
-print(f"\t 3 -", messages.dequeue())
-print(f"\t 4 -", messages.dequeue())
+#print("\nThese are the results:\n")
+#print(f"\t 1 -", messages.dequeue())
+#print(f"\t 2 -", messages.dequeue())
+#print(f"\t 3 -", messages.dequeue())
+#print(f"\t 4 -", messages.dequeue())
 
 @dataclass(order=True)
 class Element:
