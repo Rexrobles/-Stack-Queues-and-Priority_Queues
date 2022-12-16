@@ -3,6 +3,8 @@
 # Importing the necessary module and queue classes into the global namespace.
 import argparse
 from queue import LifoQueue, PriorityQueue, Queue
+import threading
+
 
 QUEUE_TYPES = {
     "fifo": Queue,
@@ -45,3 +47,12 @@ PRODUCTS = (
     ":thread:",
     ":yo-yo:",
 )
+
+class Worker(threading.Thread):
+    def __init__(self, speed, buffer):
+        super().__init__(daemon=True)
+        self.speed = speed
+        self.buffer = buffer
+        self.product = None
+        self.working = False
+        self.progress = 0
