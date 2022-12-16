@@ -4,7 +4,7 @@ from typing import NamedTuple
 import networkx as nx
 from queuesFIFO import Queue
 from collections import deque
-from queuesLIFO import stack
+from queuesLIFO import Stack
 
 # Adding data class for future use, such as the networkx need.
 class City(NamedTuple):
@@ -99,9 +99,9 @@ def connected(graph, source, destination):
     return shortest_path(graph, source, destination) is not None
 
 def depth_first_traverse(graph, source, order_by=None):
-    Stack = stack(source)
+    stack = Stack(source)
     visited = set()
-    while Stack:
+    while stack:
         if (node := stack.dequeue()) not in visited:
             yield node
             visited.add(node)

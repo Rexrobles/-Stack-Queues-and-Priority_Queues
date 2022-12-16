@@ -7,7 +7,7 @@ from collections import deque
 # from queues import Queue
 
 # Class variables for the implementation of enqueue and dequeue.
-class stack:
+class Stack:
     def __init__(self, * element):
         self._elements = deque(element) # The leading underscore in the attribute’s name indicates an internal bit of implementation, which only the class should access and modify.
 
